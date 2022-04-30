@@ -8,7 +8,7 @@ public class LetterInventory {
     int totalCount;
 
     /**
-     * add comments
+     * sets the fields to empty
      */
     LetterInventory() {
         /* Allocate space for the array */
@@ -21,7 +21,7 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     * sets the fields from the data in the String
      */
     LetterInventory(String input) {
         /* Setup array */
@@ -40,7 +40,7 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     * accesses the count of a specific character
      */
     public int get(char c) {
         if(!Character.isLetter(c)) {
@@ -50,7 +50,7 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     * modifies the count of a specific character
      */
     public void set(char c, int count) {
         if(!Character.isLetter(c)) {
@@ -64,14 +64,15 @@ public class LetterInventory {
     }
 
     /**
-     * add ccomments
+     * returns the total of all counts
      */
     public int size() {
+
         return totalCount;
     }
 
     /**
-     * add comments
+     * returns whether the LetterInventory is empty
      */
     public boolean isEmpty() {
         return totalCount == 0;
@@ -88,7 +89,7 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     * returns a new LetterInventory + contains the sum of the count
      */
     public LetterInventory add(LetterInventory other) {
         LetterInventory toReturn = new LetterInventory();
@@ -100,7 +101,7 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     *  returns a new LetterInventory + contains the difference of the count
      */
     public LetterInventory subtract(LetterInventory other) {
         LetterInventory toReturn = new LetterInventory();
@@ -116,14 +117,14 @@ public class LetterInventory {
     }
 
     /**
-     * add comments
+     * returns the percentage of a LetterInventory
      */
     public double getLetterPercentage(char c) {
         return get(c) / (double)totalCount;
     }
 
     /**
-     * add comments
+     * acquires the appropriate index in the array for the character passed
      */
     private static int getIndex(char c) {
         c = Character.toLowerCase(c);

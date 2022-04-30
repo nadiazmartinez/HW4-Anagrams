@@ -2,13 +2,14 @@ import java.util.*;
 
 /**
  * Nadia Martinez
+ * 4/22/22
  */
 public class Anagrams {
     private List<String> orderedDictionary;
     private Map<String, LetterInventory> inventoryMap;
 
     /**
-     * add comments
+     *constructor uses a map which conserves time and space
      */
     public Anagrams(List<String> dictionary) {
         orderedDictionary = new LinkedList<>(dictionary);
@@ -20,7 +21,7 @@ public class Anagrams {
     }
 
     /**
-     * add comments
+     * prints all answers of the anagram with given max
      */
     public void print(String text, int max) {
         explore(new LetterInventory(text), new LinkedList<String>(),
@@ -40,7 +41,9 @@ public class Anagrams {
     }
 
     /**
-     * add comments
+     * explores Anagram solution given remaining text (remaining) and current chosen words (chosen)
+     * stores answers
+     * guarantees all answers at most max elements
      */
     private void explore(LetterInventory remaining, List<String> chosen,
                          List<String> prunedDictionary, int max){
